@@ -33,6 +33,15 @@ jobs:
       run: |
         docker run -d -p 8080:8080 --name mynodeapp nodejs-app:latest
 
+    # Custom    
+    - name: Show running containers
+      run: docker ps -a
+
+    - name: Show application logs
+      run: docker logs mynodeapp  
+      
+    - name: Test the running container
+      run: curl -v http://localhost:8080
     # Test dependencies are typically installed via a project's package.json
     # and should ideally not be handled separately in CI workflows.
     - name: Install test dependencies
