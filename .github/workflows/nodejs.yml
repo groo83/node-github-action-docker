@@ -32,9 +32,7 @@ jobs:
     - name: Run the Docker container
       run: |
         docker run -d -p 8080:8080 --name mynodeapp nodejs-app:latest
-    # custom
-    - name: Show running containers
-      run: docker ps -a
+
     # Test dependencies are typically installed via a project's package.json
     # and should ideally not be handled separately in CI workflows.
     - name: Install test dependencies
